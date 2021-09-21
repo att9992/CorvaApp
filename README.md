@@ -37,10 +37,13 @@ Use `requirments.txt` file to install dependencies:
 pip install -r requirements.txt
 ```
 
-## Run app locally
+## Run app 
 
 Run the app locally:
 
 ```
 streamlit run app.py
 ```
+
+Or access [the website](https://share.streamlit.io/att9992/corvaapp/main/app.py)
+
