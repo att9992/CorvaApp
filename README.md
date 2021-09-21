@@ -1,4 +1,4 @@
-Minimum Curvature Well Trajectory App
+Well Trajectory App
 ==========================
 ## Create a Virtual Environment
 
