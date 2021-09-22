@@ -21,9 +21,10 @@ def well_trajectory(df):
             color=df["vertical_section"],
             colorscale='Viridis',
             showscale=True,
+            colorbar=dict(title='Vertical Section')
         ),
-        hovertemplate='<extra></extra><br>' + '<b>North</b>: %{y:.2f}<br>' +
-                      '<b>East</b>: %{x:.2f}<br>' + '<b>TVD</b>: %{z:.2f}<br>',
+        hovertemplate='<extra></extra><br>' + '<b>North (ft)</b>: %{y:.2f}<br>' +
+                      '<b>East (ft)</b>: %{x:.2f}<br>' + '<b>TVD (ft)</b>: %{z:.2f}<br>',
         line=dict(
             color='darkblue',
             width=2
@@ -32,19 +33,19 @@ def well_trajectory(df):
     fig.update_layout(scene=dict(
         xaxis=dict(
             backgroundcolor="rgb(200, 200, 230)",
-            title="East",
+            title="East (ft)",
             gridcolor="white",
             showbackground=True,
             zerolinecolor="white", ),
         yaxis=dict(
             backgroundcolor="rgb(230, 200,230)",
-            title="North",
+            title="North (ft)",
             gridcolor="white",
             showbackground=True,
             zerolinecolor="white"),
         zaxis=dict(
             backgroundcolor="rgb(230, 230,200)",
-            title="TVD",
+            title="TVD (ft)",
             gridcolor="white",
             showbackground=True,
             zerolinecolor="white", ), ),
@@ -65,8 +66,26 @@ def plot_1(df):
                                                 line=dict(color='White', width=0.5)),
                                     ))
     fig.update_layout(
-        xaxis=dict(ticks="outside", mirror=True, showline=True, side='top', title='East (ft)', linewidth=0.5, linecolor='White', gridcolor='White'),
-        yaxis=dict(ticks="outside", mirror=True, showline=True, side='right', title='North (ft)',linewidth=0.5, linecolor='White', gridcolor='White'),
+        xaxis=dict(ticks="outside",
+                   mirror=True,
+                   showline=True,
+                   side='top',
+                   title='East (ft)',
+                   linewidth=0.5,
+                   linecolor='White',
+                   gridcolor='White',
+                   zerolinecolor='White',
+                   zerolinewidth=0.5),
+        yaxis=dict(ticks="outside",
+                   mirror=True,
+                   showline=True,
+                   side='right',
+                   title='North (ft)',
+                   linewidth=0.5,
+                   linecolor='White',
+                   gridcolor='White',
+                   zerolinecolor='White',
+                   zerolinewidth=0.5),
         template='plotly_dark',
         width=800,
         height=500,
@@ -81,8 +100,24 @@ def plot_2(df):
                                     ))
     fig['layout']['yaxis']['autorange'] = "reversed"
     fig.update_layout(
-        xaxis=dict(ticks="outside", mirror=True, showline=True, title='Vertical Section (ft)', linewidth=0.5, linecolor='White', gridcolor='White'),
-        yaxis=dict(ticks="outside", mirror=True, showline=True, title='TVD (ft)', linewidth=0.5, linecolor='White', gridcolor='White'),
+        xaxis=dict(ticks="outside",
+                   mirror=True,
+                   showline=True,
+                   title='Vertical Section (ft)',
+                   linewidth=0.5,
+                   linecolor='White',
+                   gridcolor='White',
+                   zerolinecolor='White',
+                   zerolinewidth=0.5),
+        yaxis=dict(ticks="outside",
+                   mirror=True,
+                   showline=True,
+                   title='TVD (ft)',
+                   linewidth=0.5,
+                   linecolor='White',
+                   gridcolor='White',
+                   zerolinecolor='White',
+                   zerolinewidth=0.5),
         template='plotly_dark',
         width=800,
         height=500,
